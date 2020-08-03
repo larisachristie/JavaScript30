@@ -1,6 +1,6 @@
 html {
   font-size: 10px;
-  background: url(https://i.imgur.com/b9r5sEL.jpg) bottom center;
+  background: url(https://live.staticflickr.com/662/22927557314_2a424b19f6_k.jpg) bottom center;
   background-size: cover;
 }
 
@@ -28,7 +28,7 @@ body,html {
   width: 10rem;
   text-align: center;
   color: white;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.5);
   text-shadow: 0 0 .5rem black;
 }
 

@@ -57,20 +57,7 @@
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
-<script>
-  const keyNodeList = document.querySelectorAll(".key");
-  const audioNodeList = document.querySelectorAll("audio");
-  keyNodeList.forEach(element => {
-    element.addEventListener('keydown', e => {
-      const dataKey = element.dataset.key;
-      const matchingAudio = [...audioNodeList].find(item => item.dataset.key === dataKey);
-      element.classList.add("playing");
-    });
-    element.addEventListener('keyup', e => {
-      element.classList.remove("playing");
-    })
-  })
-</script>
+<script src="index.js"></script>
 
 
 </body>
