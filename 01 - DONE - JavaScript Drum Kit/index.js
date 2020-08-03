@@ -7,24 +7,18 @@ function findNode(list, property) {
   return matchingNode;
 }
 
-// // Optionally append audio elements to corresponding divs
-// [...keyNodeList].forEach(item => {
-//   item.appendChild(findNode(audioNodeList, item.dataset.key));
-// });
-
-window.addEventListener('keydown', event => {
+window.addEventListener("keydown", event => {
+  // Works only with keys A through L on the keyboard
   if (keyDatasetArray.includes(event.keyCode)) {
     const correspondingDiv = findNode(keyNodeList, event.keyCode);
     correspondingDiv.classList.add("playing");
-    const correspondingAudio = findNode(audioNodeList, event.keyCode);
-    correspondingAudio.autoplay = true;
-    correspondingAudio.play();
-  }
-});
 
-window.addEventListener('keyup', event => {
-  if (keyDatasetArray.includes(event.keyCode)) {
-    const correspondingDiv = findNode(keyNodeList, event.keyCode);
-    correspondingDiv.classList.remove("playing");
+    const correspondingAudio = findNode(audioNodeList, event.keyCode);
+    correspondingAudio.currentTime = 0;
+    correspondingAudio.play();
+
+    correspondingDiv.addEventListener("transitionend", () => {
+      correspondingDiv.classList.remove("playing");
+    });
   }
 });
